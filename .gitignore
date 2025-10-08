@@ -1,0 +1,70 @@
+# ==========================
+# AMBIENTE E DEPENDÊNCIAS
+# ==========================
+.venv/
+env/
+venv/
+ENV/
+
+# ==========================
+# CACHE E COMPILAÇÃO PYTHON
+# ==========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+
+# ==========================
+# BANCO DE DADOS LOCAL
+# ==========================
+wayne.db
+*.sqlite3
+*.db
+
+# ==========================
+# CONFIGURAÇÕES LOCAIS E SEGREDOS
+# ==========================
+.env
+*.env
+secrets.json
+
+# ==========================
+# LOGS E RELATÓRIOS
+# ==========================
+*.log
+*.out
+*.err
+
+# ==========================
+# EDITORES E SISTEMAS
+# ==========================
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# ==========================
+# ARQUIVOS TEMPORÁRIOS
+# ==========================
+tmp/
+temp/
+*.bak
+*.old
+
+# ==========================
+# MIGRAÇÕES OU BUILD INTERNOS
+# (se você gerar builds automáticos)
+# ==========================
+build/
+dist/
+*.egg-info/
+
+# ==========================
+# TESTES
+# ==========================
+.coverage
+htmlcov/
+.cache/
+pytest_cache/
