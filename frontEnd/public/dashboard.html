@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Wayne System - Dashboard</title>
+  <link rel="stylesheet" href="../src/assets/style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="brand">Wayne System</div>
+    <div class="nav-actions">
+      <span id="current-user">Usuário</span>
+      <button id="btn-logout" class="secondary">Logout</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <aside class="sidebar">
+      <button class="side-btn active" data-section="equipments">Equipamentos</button>
+      <button class="side-btn" data-section="equipmentSafety">Equipamentos de Segurança</button>
+      <button class="side-btn" data-section="vehicles">Veículos</button>
+    </aside>
+
+    <section class="content">
+      <!-- Equipamentos -->
+      <section id="equipments" class="section active">
+        <div class="section-header">
+          <h2>Equipamentos</h2>
+          <button id="btn-add-equipment" class="primary small">Adicionar novo</button>
+        </div>
+        <div id="equipment-form" class="panel hidden">
+          <input id="equipment-id" type="hidden" />
+          <label>Nome</label><input id="equipment-name" />
+          <label>Descrição</label><input id="equipment-desc" />
+          <div class="form-actions">
+            <button id="save-equipment" class="primary small">Salvar</button>
+            <button id="cancel-equipment" class="secondary small">Cancelar</button>
+          </div>
+        </div>
+        <div id="equipment-message" class="message"></div>
+        <table id="equipment-table" class="table">
+          <thead><tr><th>ID</th><th>Nome</th><th>Descrição</th><th>Ações</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <!-- Equipment Safety -->
+      <section id="equipmentSafety" class="section">
+        <div class="section-header">
+          <h2>Equipamentos de Segurança</h2>
+          <button id="btn-add-equipmentSafety" class="primary small">Adicionar novo</button>
+        </div>
+        <div id="equipmentSafety-form" class="panel hidden">
+          <input id="equipmentSafety-id" type="hidden" />
+          <label>Nome</label><input id="equipmentSafety-name" />
+          <label>Descrição</label><input id="equipmentSafety-desc" />
+          <div class="form-actions">
+            <button id="save-equipmentSafety" class="primary small">Salvar</button>
+            <button id="cancel-equipmentSafety" class="secondary small">Cancelar</button>
+          </div>
+        </div>
+        <div id="equipmentSafety-message" class="message"></div>
+        <table id="equipmentSafety-table" class="table">
+          <thead><tr><th>ID</th><th>Nome</th><th>Descrição</th><th>Ações</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <!-- Vehicles -->
+      <section id="vehicles" class="section">
+        <div class="section-header">
+          <h2>Veículos</h2>
+          <button id="btn-add-vehicle" class="primary small">Adicionar novo</button>
+        </div>
+        <div id="vehicle-form" class="panel hidden">
+          <input id="vehicle-id" type="hidden" />
+          <label>Tipo</label><input id="vehicle-type" />
+          <label>Modelo</label><input id="vehicle-model" />
+          <label>Ano</label><input id="vehicle-year" type="number" />
+          <div class="form-actions">
+            <button id="save-vehicle" class="primary small">Salvar</button>
+            <button id="cancel-vehicle" class="secondary small">Cancelar</button>
+          </div>
+        </div>
+        <div id="vehicle-message" class="message"></div>
+        <table id="vehicle-table" class="table">
+          <thead><tr><th>ID</th><th>Tipo</th><th>Modelo</th><th>Ano</th><th>Ações</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </section>
+  </main>
+
+  <script type="module" src="../src/pages/script.js" defer></script>
+</body>
+</html>

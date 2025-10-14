@@ -1,0 +1,354 @@
+/* 🦇 Wayne System - Tema Batcaverna Total */
+:root {
+    --bg: #0a0a0d;
+    /* Fundo geral - negro absoluto */
+    --bg-alt: #101015;
+    /* Fundo secundário */
+    --card: #16161c;
+    /* Painéis e cards */
+    --primary: #f5c518;
+    /* Dourado Wayne Enterprises */
+    --primary-glow: rgba(245, 197, 24, 0.4);
+    --accent: #1e2a47;
+    /* Azul escuro elegante */
+    --muted: #b0b0b5;
+    /* Texto secundário */
+    --danger: #e74c3c;
+    --success: #2ecc71;
+    --shadow: 0 0 20px rgba(245, 197, 24, 0.08);
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: #e8e8e8;
+    overflow-x: hidden;
+    transition: background 0.3s ease;
+}
+
+/* --- ELEMENTOS GERAIS --- */
+.centered {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.card {
+    background: linear-gradient(145deg, #131317, #0b0b0f);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 440px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* leve efeito de brilho dourado na borda */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(245, 197, 24, 0.4), transparent, rgba(245, 197, 24, 0.1));
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: destination-out;
+    pointer-events: none;
+}
+
+/* --- LOGIN / REGISTER --- */
+.auth-card h1 {
+    text-align: center;
+    margin: 0 0 20px;
+    color: var(--primary);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px var(--primary-glow);
+}
+
+.tab {
+    background: transparent;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    color: var(--muted);
+    font-weight: 500;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.tab.active {
+    color: var(--primary);
+    text-shadow: 0 0 8px var(--primary-glow);
+    border-bottom: 2px solid var(--primary);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    background: #111114;
+    color: #f8f8f8;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 10px var(--primary-glow);
+    outline: none;
+}
+
+.checkbox-line {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.25s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 12px var(--primary-glow);
+}
+
+.primary {
+    background: var(--primary);
+    color: #0a0a0d;
+    text-transform: uppercase;
+}
+
+.secondary {
+    background: #1e1e24;
+    color: #f5f5f5;
+}
+
+.small {
+    padding: 6px 10px;
+    font-size: 14px;
+    border-radius: 6px;
+}
+
+.hidden {
+    display: none;
+}
+
+.message {
+    color: var(--danger);
+    min-height: 20px;
+    margin-top: 8px;
+}
+
+/* --- NAVBAR --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 24px;
+    background: #101015;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid #1c1c1f;
+}
+
+.brand {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--primary);
+    text-shadow: 0 0 10px var(--primary-glow);
+}
+
+.nav-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+/* --- LAYOUT DASHBOARD --- */
+.container {
+    display: flex;
+    gap: 20px;
+    padding: 24px;
+}
+
+.sidebar {
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.side-btn {
+    background: #16161c;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #24242a;
+    color: var(--muted);
+    transition: all 0.3s ease;
+}
+
+.side-btn:hover {
+    background: #1f1f27;
+    color: var(--primary);
+}
+
+.side-btn.active {
+    background: var(--primary);
+    color: #000;
+    box-shadow: 0 0 16px var(--primary-glow);
+}
+
+.content {
+    flex: 1;
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.panel {
+    background: var(--card);
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    box-shadow: var(--shadow);
+}
+
+/* --- TABELAS --- */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #101015;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(245, 197, 24, 0.05);
+}
+
+.table th,
+.table td {
+    padding: 10px;
+    border-bottom: 1px solid #22222a;
+    text-align: left;
+    color: #eaeaea;
+}
+
+.table thead {
+    background: #0b0b10;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.table tbody tr:hover {
+    background: #191921;
+    transition: background 0.2s ease;
+}
+
+.table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.form-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+/* --- ROLAGEM --- */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+    box-shadow: 0 0 10px var(--primary-glow);
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        overflow: auto;
+    }
+
+    .side-btn {
+        flex: 1;
+        white-space: nowrap;
+    }
+}
+
+/* 🛠️ Correção global para evitar bloqueio de cliques */
+.card::before,
+.panel::before,
+.sidebar::before,
+.section::before {
+  pointer-events: none !important;
+}
+
+.panel.hidden {
+  display: none !important;
+}
+
+.panel:not(.hidden) {
+  display: block !important;
+  position: relative;
+  z-index: 2; /* garante prioridade sobre outros elementos */
+}

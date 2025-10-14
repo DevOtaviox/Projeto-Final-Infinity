@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Virtual environments
+.venv/
+venv/
+
+# Environment variables
+.env
+env.py
+
+# Database files
+*.db
+*.sqlite3
+
+# Migrations
+migrations/
+backEnd/migrations/
+
+# VSCode
+.vscode/
+
+# PyCharm
+.idea/
+
+# Byte-compiled / optimized / DLL files
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Logs and reports
+*.log
+*.pot
+*.py[cod].cover
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+nosetests.xml
+test_*.xml
+
+# My editor files
+*.swp
+*~

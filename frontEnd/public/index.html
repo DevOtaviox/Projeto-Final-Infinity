@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Wayne System - Login</title>
+    <link rel="stylesheet" href="../src/assets/style.css" />
+
+</head>
+
+<body>
+    <main class="centered">
+        <div class="card auth-card">
+            <h1>Wayne System</h1>
+
+            <div id="auth-switch">
+                <button id="btn-show-login" class="tab active">Entrar</button>
+                <button id="btn-show-register" class="tab">Registrar</button>
+            </div>
+
+            <!-- LOGIN -->
+            <form id="form-login" class="form">
+                <label>Email</label>
+                <input id="login-email" type="email" required />
+                <label>Senha</label>
+                <input id="login-password" type="password" required />
+                <button type="submit" class="primary">Entrar</button>
+            </form>
+
+            <!-- REGISTER -->
+            <form id="form-register" class="form hidden">
+                <label>Nome</label>
+                <input id="register-name" type="text" required />
+                <label>Email</label>
+                <input id="register-email" type="email" required />
+                <label>Senha</label>
+                <input id="register-password" type="password" required />
+
+                <label class="checkbox-line">
+                    <input type="checkbox" id="register-admin" />
+                    Registrar como administrador
+                </label>
+
+                <button type="submit" class="primary">Registrar</button>
+            </form>
+
+
+            <p id="auth-message" class="message"></p>
+        </div>
+    </main>
+
+    <script type="module"  src="../src/pages/script.js" defer ></script>
+
+    <script>
+        // redirect if already authenticated
+        if (localStorage.getItem("access_token")) {
+            window.location.href = "dashboard.html";
+        }
+    </script>
+</body>
+
+</html>
