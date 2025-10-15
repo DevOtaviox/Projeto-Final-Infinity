@@ -10,8 +10,8 @@ __pycache__/
 venv/
 
 # Environment variables
-.env
-env.py
+
+
 
 # Database files
 *.db
