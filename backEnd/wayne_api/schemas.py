@@ -61,7 +61,7 @@ class EquipmentList(BaseModel):
 # Equipment Safety Schemas
 class EquipmentSafetyBase(BaseModel):
     name: str
-    status: str
+    status: Optional[str] = None
     description: str
 
     class Config:
@@ -70,7 +70,7 @@ class EquipmentSafetyBase(BaseModel):
 class EquipmentSafetyPublic(BaseModel):
     id: int
     name: str
-    status: str
+    status: Optional[str] = None
     description: str
 
     class Config:
